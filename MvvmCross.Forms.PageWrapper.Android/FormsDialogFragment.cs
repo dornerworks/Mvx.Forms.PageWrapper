@@ -1,11 +1,11 @@
 using Android.App;
 using Android.OS;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Fragment = Android.Support.V4.App.Fragment;
+using Fragment = AndroidX.Fragment.App.Fragment;
 using View = Android.Views.View;
 
 namespace MvvmCross.Forms.PageWrapper.Android
@@ -14,8 +14,13 @@ namespace MvvmCross.Forms.PageWrapper.Android
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        
-        protected TPage Page;
+        private TPage _page;
+        protected TPage Page
+        {
+            get => _page ??= CreatePage();
+            set => _page = value;
+        }
+
         private Fragment _fragment;
 
         public FormsDialogFragment()
@@ -40,6 +45,11 @@ namespace MvvmCross.Forms.PageWrapper.Android
             }
 
             return base.OnCreateDialog(savedInstanceState);
+        }
+        
+        protected virtual TPage CreatePage()
+        {
+            return new TPage();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

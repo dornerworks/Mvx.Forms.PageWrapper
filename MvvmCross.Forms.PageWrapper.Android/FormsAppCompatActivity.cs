@@ -1,28 +1,26 @@
 using Android.OS;
-using Android.Support.Design.Widget;
-using Android.Support.V7.Widget;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
+using Google.Android.Material.AppBar;
+using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace MvvmCross.Forms.PageWrapper.Android
 {
-    public abstract class FormsAppCompatActivity<TPage, TViewModel> : MvxAppCompatActivity<TViewModel>
+    public abstract class FormsAppCompatActivity<TPage, TViewModel> : MvxActivity<TViewModel>
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        
-        protected TPage Page;
-        // protected int ContainerLayoutId = Resource.Layout.activity_fragment_container;
-        public Toolbar Toolbar { get; set; }
-        public AppBarLayout AppBar { get; set; }
-        
-        public FormsAppCompatActivity()
+        private TPage _page;
+        protected TPage Page
         {
-            Page = new TPage();
+            get => _page ??= CreatePage();
+            set => _page = value;
         }
-
+        protected Toolbar Toolbar { get; set; }
+        protected AppBarLayout AppBar { get; set; }
+        
         protected override void OnViewModelSet()
         {
             Page.BindingContext = ViewModel;
@@ -52,5 +50,9 @@ namespace MvvmCross.Forms.PageWrapper.Android
             transaction.Commit();
         }
         
+        protected virtual TPage CreatePage()
+        {
+            return new TPage();
+        }
     }
 }

@@ -1,7 +1,7 @@
 using Android.OS;
-using Android.Support.V4.App;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
+using AndroidX.Fragment.App;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -13,14 +13,14 @@ namespace MvvmCross.Forms.PageWrapper.Android
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        
-        protected TPage Page;
-        private Fragment _fragment;
-
-        public FormsFragment()
+        private TPage _page;
+        protected TPage Page
         {
-            Page = new TPage();
+            get => _page ??= CreatePage();
+            set => _page = value;
         }
+        
+        private Fragment _fragment;
         
         public override void OnViewModelSet()
         {
@@ -31,7 +31,6 @@ namespace MvvmCross.Forms.PageWrapper.Android
         {
             return inflater.Inflate(Resource.Layout.xamarin_forms_fragment, null);
         }
-
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             if (_fragment != null) return; // recreating the fragment will cause an empty fragment.
@@ -40,6 +39,11 @@ namespace MvvmCross.Forms.PageWrapper.Android
                 .BeginTransaction()
                 .Replace(Resource.Id.forms_fragment_container, _fragment)
                 .Commit();
+        }
+        
+        protected virtual TPage CreatePage()
+        {
+            return new TPage();
         }
     }
 }
