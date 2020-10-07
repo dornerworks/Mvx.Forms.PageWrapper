@@ -1,0 +1,25 @@
+name: Publish Nuget
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: |
+        nuget restore
+        msbuild Mvx.Forms.PageWrapper.Android/Mvx.Forms.PageWrapper.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+    - name: Publish FluentTableView
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+          PROJECT_FILE_PATH: Mvx.Forms.PageWrapper.Android/Mvx.Forms.PageWrapper.Android.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
