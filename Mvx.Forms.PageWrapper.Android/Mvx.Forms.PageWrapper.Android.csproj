@@ -10,8 +10,8 @@
     <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmCross.Forms.PageWrapper.Android</RootNamespace>
-    <AssemblyName>MvvmCross.Forms.PageWrapper.Android</AssemblyName>
+    <RootNamespace>Mvx.Forms.PageWrapper.Android</RootNamespace>
+    <AssemblyName>Mvx.Forms.PageWrapper.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -22,7 +22,7 @@
     <PackageId>Mvx.Forms.PageWrapper.Android</PackageId>
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>C. Brandon Butler</Authors>
-    <RepositoryUrl>https://github.com/Hackmodford/MvvmCross.Forms.PageWrapper.Android</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper.Android</RepositoryUrl>
     <Description>Xamarin.Forms Page wrappers for MvvmCross Android Fragment/Activity</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,10 +56,10 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormsDialogFragment.cs" />
-    <Compile Include="FormsFragment.cs" />
-    <Compile Include="FormsAppBarFragment.cs" />
-    <Compile Include="FormsAppCompatActivity.cs" />
+    <Compile Include="MvxFormsDialogFragment.cs" />
+    <Compile Include="MvxFormsFragment.cs" />
+    <Compile Include="MvxFormsAppBarFragment.cs" />
+    <Compile Include="MvxFormsAppCompatActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

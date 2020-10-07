@@ -8,9 +8,9 @@ using Xamarin.Forms.Platform.Android;
 using Fragment = AndroidX.Fragment.App.Fragment;
 using View = Android.Views.View;
 
-namespace MvvmCross.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Android
 {
-    public abstract class FormsDialogFragment<TPage, TViewModel> : MvxDialogFragment<TViewModel>
+    public abstract class MvxFormsDialogFragment<TPage, TViewModel> : MvxDialogFragment<TViewModel>
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
@@ -22,11 +22,6 @@ namespace MvvmCross.Forms.PageWrapper.Android
         }
 
         private Fragment _fragment;
-
-        public FormsDialogFragment()
-        {
-            Page = new TPage();
-        }
         
         public override void OnViewModelSet()
         {

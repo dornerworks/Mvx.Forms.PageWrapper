@@ -7,9 +7,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
-namespace MvvmCross.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Android
 {
-    public abstract class FormsFragment<TPage, TViewModel> : MvxFragment<TViewModel>
+    public abstract class MvxFormsFragment<TPage, TViewModel> : MvxFragment<TViewModel>
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {

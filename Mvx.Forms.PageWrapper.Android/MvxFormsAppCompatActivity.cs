@@ -6,9 +6,9 @@ using MvvmCross.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-namespace MvvmCross.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Android
 {
-    public abstract class FormsAppCompatActivity<TPage, TViewModel> : MvxActivity<TViewModel>
+    public abstract class MvxFormsAppCompatActivity<TPage, TViewModel> : MvxActivity<TViewModel>
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {

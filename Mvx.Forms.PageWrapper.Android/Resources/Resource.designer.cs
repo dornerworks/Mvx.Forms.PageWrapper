@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MvvmCross.Forms.PageWrapper.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Mvx.Forms.PageWrapper.Android.Resource", IsApplication=false)]
 
-namespace MvvmCross.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Android
 {
 	
 	
