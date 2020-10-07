@@ -26,6 +26,16 @@ public class MyFormsFragment : MvxFormsFragment<MyPage, MyViewModel>
 
 3. You can navigate to the ViewModel as your normall would in MvvmCross. The Xamarin.Forms page will be imbedded inside the activity/fragment. Binding works as expected.
 
+### Need to handle the page construction?
+
+You can override the CreatePage method to handle the construction of the page.
+```C#
+protected override MyPage CreatePage()
+{
+  return new MyPage(paramter1, parameter2);
+}
+```
+
 ## Known Limitations
 
 * Toolbars defined in Xamarin.Forms are ignored.
