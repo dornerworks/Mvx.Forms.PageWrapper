@@ -24,6 +24,10 @@
     <Authors>C. Brandon Butler</Authors>
     <RepositoryUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper.Android</RepositoryUrl>
     <Description>Xamarin.Forms Page wrappers for MvvmCross Android Fragment/Activity</Description>
+    <Copyright>2020 DornerWorks, Ltd.</Copyright>
+    <PackageLicenseUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper.Android/blob/main/LICENSE.md</PackageLicenseUrl>
+    <Owners>DornerWorks, Ltd.</Owners>
+    <PackageProjectUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper.Android</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +37,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>portable</DebugType>
@@ -42,7 +45,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
