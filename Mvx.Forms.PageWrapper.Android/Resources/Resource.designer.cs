@@ -4596,6 +4596,9 @@ namespace Mvx.Forms.PageWrapper.Android
 			// aapt resource value: 0x7F0B005E
 			public static int xamarin_forms_fragment = 2131427422;
 			
+			// aapt resource value: 0x7F0B005F
+			public static int xamarin_forms_toolbar_activity = 2131427423;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

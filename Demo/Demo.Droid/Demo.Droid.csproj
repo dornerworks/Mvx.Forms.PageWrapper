@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>8.0.30703</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{47C1B87E-A333-4D82-B514-369BF258D7EE}</ProjectGuid>
+        <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Demo.Droid</RootNamespace>
+        <AssemblyName>Demo.Droid</AssemblyName>
+        <FileAlignment>512</FileAlignment>
+        <AndroidApplication>True</AndroidApplication>
+        <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+        <AndroidResgenClass>Resource</AndroidResgenClass>
+        <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+        <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+        <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>True</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>False</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+        <AndroidLinkMode>None</AndroidLinkMode>
+        <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugSymbols>True</DebugSymbols>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>True</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <AndroidManagedSymbols>true</AndroidManagedSymbols>
+        <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+        <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+        <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Mono.Android" />
+        <Reference Include="Mono.Android.Export" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Resources\Resource.Designer.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Setup.cs" />
+        <Compile Include="SplashScreenActivity.cs" />
+        <Compile Include="Views\FragmentHostActivity.cs" />
+        <Compile Include="Views\Page1Activity.cs" />
+        <Compile Include="Views\Page1Fragment.cs" />
+        <Compile Include="Views\Page2Activity.cs" />
+        <Compile Include="Views\Page2Fragment.cs" />
+        <Compile Include="Views\StartActivity.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Resources\AboutResources.txt" />
+        <None Include="Properties\AndroidManifest.xml" />
+        <None Include="Assets\AboutAssets.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <AndroidResource Include="Resources\layout\activity_fragment_host.xml" />
+        <AndroidResource Include="Resources\values\colors.xml" />
+        <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+        <AndroidResource Include="Resources\values\strings.xml" />
+        <AndroidResource Include="Resources\values\styles.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="MvvmCross" Version="7.0.1" />
+        <PackageReference Include="MvvmCross.Forms" Version="7.0.1" />
+        <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+        <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Android\Mvx.Forms.PageWrapper.Android.csproj">
+        <Project>{2d307490-6304-4ed6-ba99-a52897f4d13f}</Project>
+        <Name>Mvx.Forms.PageWrapper.Android</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Demo.Core\Demo.Core.csproj">
+        <Project>{e40faec1-07ca-458e-af3f-3a91c0d2cc1a}</Project>
+        <Name>Demo.Core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Demo.Forms\Demo.Forms.csproj">
+        <Project>{048f1809-3177-4c3e-9801-592374359f5e}</Project>
+        <Name>Demo.Forms</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>

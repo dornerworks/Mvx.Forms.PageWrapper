@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper.Android", "Mvx.Forms.PageWrapper.Android\Mvx.Forms.PageWrapper.Android.csproj", "{2D307490-6304-4ED6-BA99-A52897F4D13F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{52C48486-1963-4D2C-82D2-21EA243F4EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Droid", "Demo\Demo.Droid\Demo.Droid.csproj", "{47C1B87E-A333-4D82-B514-369BF258D7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Forms", "Demo\Demo.Forms\Demo.Forms.csproj", "{048F1809-3177-4C3E-9801-592374359F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Core", "Demo\Demo.Core\Demo.Core.csproj", "{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,10 +21,27 @@ Global
 		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048F1809-3177-4C3E-9801-592374359F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048F1809-3177-4C3E-9801-592374359F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048F1809-3177-4C3E-9801-592374359F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048F1809-3177-4C3E-9801-592374359F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47C1B87E-A333-4D82-B514-369BF258D7EE} = {52C48486-1963-4D2C-82D2-21EA243F4EA7}
+		{048F1809-3177-4C3E-9801-592374359F5E} = {52C48486-1963-4D2C-82D2-21EA243F4EA7}
+		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A} = {52C48486-1963-4D2C-82D2-21EA243F4EA7}
 	EndGlobalSection
 EndGlobal

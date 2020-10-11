@@ -61,7 +61,7 @@
     <Compile Include="MvxFormsDialogFragment.cs" />
     <Compile Include="MvxFormsFragment.cs" />
     <Compile Include="MvxFormsAppBarFragment.cs" />
-    <Compile Include="MvxFormsAppCompatActivity.cs" />
+    <Compile Include="MvxFormsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -92,6 +92,7 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\xamarin_forms_toolbar_activity.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

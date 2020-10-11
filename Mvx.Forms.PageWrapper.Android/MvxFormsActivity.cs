@@ -1,3 +1,4 @@
+#nullable enable
 using Android.OS;
 using AndroidX.AppCompat.Widget;
 using Google.Android.Material.AppBar;
@@ -8,18 +9,18 @@ using Xamarin.Forms.Platform.Android;
 
 namespace Mvx.Forms.PageWrapper.Android
 {
-    public abstract class MvxFormsAppCompatActivity<TPage, TViewModel> : MvxActivity<TViewModel>
+    public abstract class MvxFormsActivity<TPage, TViewModel> : MvxActivity<TViewModel>
         where TPage : ContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        private TPage _page;
+        private TPage _page = null!;
         protected TPage Page
         {
             get => _page ??= CreatePage();
             set => _page = value;
         }
-        protected Toolbar Toolbar { get; set; }
-        protected AppBarLayout AppBar { get; set; }
+        protected Toolbar? Toolbar { get; set; }
+        protected AppBarLayout? AppBar { get; set; }
         
         protected override void OnViewModelSet()
         {
@@ -33,16 +34,21 @@ namespace Mvx.Forms.PageWrapper.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.xamarin_forms_activity);
-            
-            Title = Page.Title;
-            
-            Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            if (Toolbar?.Parent != null)
+            if (AddToolbar())
             {
-                AppBar = Toolbar?.Parent as AppBarLayout;
-                SetSupportActionBar(Toolbar);
+                SetContentView(Resource.Layout.xamarin_forms_toolbar_activity);
+                Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+                if (Toolbar?.Parent != null)
+                {
+                    AppBar = Toolbar?.Parent as AppBarLayout;
+                    SetSupportActionBar(Toolbar);
+                }
             }
+            else
+            {
+                SetContentView(Resource.Layout.xamarin_forms_activity);
+            }
+            Title = Page.Title;
             
             // register the fragment
             var transaction = SupportFragmentManager.BeginTransaction();
@@ -54,5 +60,7 @@ namespace Mvx.Forms.PageWrapper.Android
         {
             return new TPage();
         }
+
+        protected abstract bool AddToolbar();
     }
 }
