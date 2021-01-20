@@ -1,0 +1,10 @@
+
+# dependabot.yml file with
+# customized nuget configuration
+
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/Mvx.Forms.PageWrapper.Android"
+    schedule:
+      interval: "daily"
