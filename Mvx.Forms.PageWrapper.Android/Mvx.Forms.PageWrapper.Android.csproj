@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
-      <Version>7.0.1</Version>
+      <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.8.0.1269</Version>
