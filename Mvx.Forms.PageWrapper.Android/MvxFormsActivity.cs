@@ -1,14 +1,14 @@
 #nullable enable
 using Android.OS;
-using MvvmCross.Forms.Views;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
+using Mvx.Forms.PageWrapper.Core;
 using Xamarin.Forms.Platform.Android;
 
 namespace Mvx.Forms.PageWrapper.Android
 {
     public abstract class MvxFormsActivity<TPage, TViewModel> : MvxActivity<TViewModel>
-        where TPage : MvxContentPage, new()
+        where TPage : MvxEmbeddedContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
         private TPage? _page;
@@ -41,7 +41,7 @@ namespace Mvx.Forms.PageWrapper.Android
         {
             return new TPage
             {
-                DataContext = ViewModel
+                ViewModel = ViewModel
             };
         }
         

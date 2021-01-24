@@ -7,7 +7,9 @@ namespace Demo.Droid.Views
 {
     [MvxFragmentPresentation(
         ActivityHostViewModelType = typeof(AndroidFragmentHostViewModel),
-        FragmentContentId = Resource.Id.fragment_container)]
+        FragmentContentId = Resource.Id.fragment_container,
+        AddFragment = true,
+        AddToBackStack = true)]
     public class Page2Fragment : MvxFormsFragment<Page2, Page2FragmentViewModel>
     {
     }

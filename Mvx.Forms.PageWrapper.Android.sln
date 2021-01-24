@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Forms", "Demo\Demo.For
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Core", "Demo\Demo.Core\Demo.Core.csproj", "{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper.Core", "Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj", "{A41A5E82-72DC-4242-922A-7857DF788E29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41A5E82-72DC-4242-922A-7857DF788E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41A5E82-72DC-4242-922A-7857DF788E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41A5E82-72DC-4242-922A-7857DF788E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41A5E82-72DC-4242-922A-7857DF788E29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

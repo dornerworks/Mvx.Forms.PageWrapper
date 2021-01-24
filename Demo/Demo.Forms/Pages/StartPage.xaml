@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<views:MvxContentPage x:TypeArguments="viewModels:StartViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+<core:MvxEmbeddedContentPage x:TypeArguments="viewModels:StartViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                       xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
-                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      xmlns:core="clr-namespace:Mvx.Forms.PageWrapper.Core;assembly=Mvx.Forms.PageWrapper.Core"
                       x:DataType="viewModels:StartViewModel"
                       x:Class="Demo.Forms.Pages.StartPage"
                       Title="Page Wrapper Demo">
@@ -17,4 +17,4 @@
             <!-- <Button Text="Forms Modal" Command="{Binding GoToFormsModalCommand}"/> -->
         </StackLayout>
     </ContentPage.Content>
-</views:MvxContentPage>
+</core:MvxEmbeddedContentPage>

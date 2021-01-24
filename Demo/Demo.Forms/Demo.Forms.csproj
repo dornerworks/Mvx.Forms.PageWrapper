@@ -11,7 +11,19 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj" />
       <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\Page1.xaml.cs">
+        <DependentUpon>Page1B.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Page2.xaml.cs">
+        <DependentUpon>Page2B.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

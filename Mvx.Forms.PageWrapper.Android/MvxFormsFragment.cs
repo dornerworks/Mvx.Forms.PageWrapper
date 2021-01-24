@@ -1,17 +1,17 @@
 #nullable enable
 using Android.OS;
 using Android.Views;
-using MvvmCross.Forms.Views;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
+using Mvx.Forms.PageWrapper.Core;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
 namespace Mvx.Forms.PageWrapper.Android
 {
     public abstract class MvxFormsFragment<TPage, TViewModel> : MvxFragment<TViewModel>
-        where TPage : MvxContentPage, new()
+        where TPage : MvxEmbeddedContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
         private TPage? _page;
@@ -36,7 +36,6 @@ namespace Mvx.Forms.PageWrapper.Android
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
-
             return this.BindingInflate(FragmentLayoutId(), container, false);
         }
         
@@ -44,7 +43,7 @@ namespace Mvx.Forms.PageWrapper.Android
         {
             return new TPage
             {
-                DataContext = ViewModel
+                ViewModel = ViewModel
             };
         }
 

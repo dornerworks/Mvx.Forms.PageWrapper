@@ -1,11 +1,11 @@
 using Demo.Core.ViewModels;
-using MvvmCross.Forms.Views;
+using Mvx.Forms.PageWrapper.Core;
 using Xamarin.Forms.Xaml;
 
 namespace Demo.Forms.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartPage : MvxContentPage<StartViewModel>
+    public partial class StartPage : MvxEmbeddedContentPage<StartViewModel>
     {
         public StartPage()
         {
