@@ -1,55 +1,57 @@
+#nullable enable
 using Android.App;
 using Android.OS;
 using Android.Views;
+using MvvmCross.Forms.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Fragment = AndroidX.Fragment.App.Fragment;
 using View = Android.Views.View;
 
 namespace Mvx.Forms.PageWrapper.Android
 {
     public abstract class MvxFormsDialogFragment<TPage, TViewModel> : MvxDialogFragment<TViewModel>
-        where TPage : ContentPage, new()
+        where TPage : MvxContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        private TPage _page;
+        private TPage? _page;
         protected TPage Page
         {
             get => _page ??= CreatePage();
             set => _page = value;
         }
-
-        private Fragment _fragment;
-        
-        public override void OnViewModelSet()
-        {
-            Page.BindingContext = ViewModel;
-        }
         
         public override Dialog OnCreateDialog(Bundle savedInstanceState)
         {
-            if (_fragment == null)
-            {
-                _fragment = Page.CreateSupportFragment(Activity);
-                ChildFragmentManager
-                    .BeginTransaction()
-                    .Replace(Resource.Id.forms_fragment_container, _fragment)
-                    .Commit();
-            }
+            var pageFragment = Page.CreateSupportFragment(Activity);
+            ChildFragmentManager
+                .BeginTransaction()
+                .Replace(Resource.Id.page_frame, pageFragment)
+                .DisallowAddToBackStack()
+                .Commit();
 
             return base.OnCreateDialog(savedInstanceState);
         }
         
-        protected virtual TPage CreatePage()
-        {
-            return new TPage();
-        }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return inflater.Inflate(Resource.Layout.xamarin_forms_fragment, null);
+            base.OnCreateView(inflater, container, savedInstanceState);
+
+            return this.BindingInflate(FragmentLayoutId(), container, false);
+        }
+        
+        protected virtual TPage CreatePage()
+        {
+            return new TPage
+            {
+                DataContext = ViewModel
+            };
+        }
+        
+        protected virtual int FragmentLayoutId()
+        {
+            return Resource.Layout.xamarin_forms_container;
         }
     }
 }

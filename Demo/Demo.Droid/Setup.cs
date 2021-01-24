@@ -1,9 +1,13 @@
-using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.Binding;
+using MvvmCross.Forms.Platforms.Android.Bindings;
+using MvvmCross.Platforms.Android.Core;
 
 namespace Demo.Droid
 {
-    public class Setup : MvxFormsAndroidSetup<Core.App, Forms.App>
+    public class Setup : MvxAndroidSetup<Core.App>
     {
-        
+        protected override MvxBindingBuilder CreateBindingBuilder() => new MvxFormsAndroidBindingBuilder();
     }
+    
+    
 }

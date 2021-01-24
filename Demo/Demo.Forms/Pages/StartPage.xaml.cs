@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using Demo.Core.ViewModels;
+using MvvmCross.Forms.Views;
 using Xamarin.Forms.Xaml;
 
 namespace Demo.Forms.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartPage : ContentPage
+    public partial class StartPage : MvxContentPage<StartViewModel>
     {
         public StartPage()
         {

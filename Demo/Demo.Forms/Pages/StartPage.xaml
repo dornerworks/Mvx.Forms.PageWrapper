@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
-             x:DataType="viewModels:StartViewModel"
-             x:Class="Demo.Forms.Pages.StartPage"
-             Title="Page Wrapper Demo">
+<views:MvxContentPage x:TypeArguments="viewModels:StartViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      x:DataType="viewModels:StartViewModel"
+                      x:Class="Demo.Forms.Pages.StartPage"
+                      Title="Page Wrapper Demo">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to the Demo." HorizontalOptions="CenterAndExpand"/>
@@ -16,4 +17,4 @@
             <!-- <Button Text="Forms Modal" Command="{Binding GoToFormsModalCommand}"/> -->
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</views:MvxContentPage>

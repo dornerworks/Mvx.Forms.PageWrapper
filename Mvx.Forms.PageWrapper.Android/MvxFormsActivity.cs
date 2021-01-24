@@ -1,32 +1,23 @@
 #nullable enable
 using Android.OS;
-using AndroidX.AppCompat.Widget;
-using Google.Android.Material.AppBar;
+using MvvmCross.Forms.Views;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace Mvx.Forms.PageWrapper.Android
 {
     public abstract class MvxFormsActivity<TPage, TViewModel> : MvxActivity<TViewModel>
-        where TPage : ContentPage, new()
+        where TPage : MvxContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
-        private TPage _page = null!;
+        private TPage? _page;
         protected TPage Page
         {
             get => _page ??= CreatePage();
             set => _page = value;
         }
-        protected Toolbar? Toolbar { get; set; }
-        protected AppBarLayout? AppBar { get; set; }
         
-        protected override void OnViewModelSet()
-        {
-            Page.BindingContext = ViewModel;
-        }
-
         /// <summary>
         /// Creates the activity and maps the Xamarin.Forms page to the fragment
         /// </summary>
@@ -34,33 +25,29 @@ namespace Mvx.Forms.PageWrapper.Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            if (AddToolbar())
-            {
-                SetContentView(Resource.Layout.xamarin_forms_toolbar_activity);
-                Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-                if (Toolbar?.Parent != null)
-                {
-                    AppBar = Toolbar?.Parent as AppBarLayout;
-                    SetSupportActionBar(Toolbar);
-                }
-            }
-            else
-            {
-                SetContentView(Resource.Layout.xamarin_forms_activity);
-            }
-            Title = Page.Title;
+            SetContentView(ActivityLayoutId());
+
+            var pageFragment = Page.CreateSupportFragment(this);
             
             // register the fragment
-            var transaction = SupportFragmentManager.BeginTransaction();
-            transaction.Add(Resource.Id.forms_activity_fragment_container, Page.CreateSupportFragment(this));
-            transaction.Commit();
+            SupportFragmentManager
+                .BeginTransaction()
+                .Replace(Resource.Id.page_frame, pageFragment)
+                .DisallowAddToBackStack()
+                .Commit();
         }
         
         protected virtual TPage CreatePage()
         {
-            return new TPage();
+            return new TPage
+            {
+                DataContext = ViewModel
+            };
         }
-
-        protected abstract bool AddToolbar();
+        
+        protected virtual int ActivityLayoutId()
+        {
+            return Resource.Layout.xamarin_forms_container;
+        }
     }
 }

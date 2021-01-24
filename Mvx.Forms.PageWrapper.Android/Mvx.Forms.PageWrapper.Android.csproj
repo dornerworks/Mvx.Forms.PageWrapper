@@ -60,7 +60,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MvxFormsDialogFragment.cs" />
     <Compile Include="MvxFormsFragment.cs" />
-    <Compile Include="MvxFormsAppBarFragment.cs" />
     <Compile Include="MvxFormsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Forms">
       <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
@@ -80,22 +82,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\xamarin_forms_activity.xml">
+    <AndroidResource Include="Resources\layout\xamarin_forms_container.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\xamarin_forms_fragment.xml">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\xamarin_forms_app_bar_fragment.xml">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\xamarin_forms_toolbar_activity.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
