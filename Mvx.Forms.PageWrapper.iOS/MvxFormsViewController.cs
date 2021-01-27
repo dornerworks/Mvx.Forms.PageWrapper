@@ -1,9 +1,10 @@
-﻿#nullable enable
-using MvvmCross.Platforms.Ios.Views;
+﻿using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.ViewModels;
 using Mvx.Forms.PageWrapper.Core;
 using UIKit;
 using Xamarin.Forms;
+
+#nullable enable
 
 namespace Mvx.Forms.PageWrapper.iOS
 {

@@ -5,12 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MvvmCross" Version="7.1.2" />
-      <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
-      <PackageReference Include="Xamarin.Forms" Version="5.0.0.1905" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj" />
       <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
     </ItemGroup>
@@ -24,6 +18,11 @@
         <DependentUpon>Page2B.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MvvmCross" Version="7.1.2" />
+      <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
     </ItemGroup>
 
 </Project>

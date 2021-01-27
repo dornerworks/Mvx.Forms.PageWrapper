@@ -41,9 +41,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MvvmCross.Forms, Version=7.1.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\.nuget\packages\mvvmcross.forms\7.1.2\lib\monoandroid10.0\MvvmCross.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\.nuget\packages\xamarin.forms\4.6.0.847\buildTransitive\XCODE11\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +59,6 @@
     <Compile Include="MvxFormsViewController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.1905</Version>
-    </PackageReference>
     <PackageReference Include="MvvmCross">
       <Version>7.1.2</Version>
     </PackageReference>
@@ -63,6 +66,9 @@
       <Version>0.2.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.847</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
