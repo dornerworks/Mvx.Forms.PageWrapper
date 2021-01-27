@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<core:MvxEmbeddedContentPage x:TypeArguments="viewModels:Page2FragmentViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                               xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
+                               xmlns:core="clr-namespace:Mvx.Forms.PageWrapper.Core;assembly=Mvx.Forms.PageWrapper.Core"
+                               x:Class="Demo.Forms.Pages.Page2"
+                               Title="Page 2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hello, world!"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</core:MvxEmbeddedContentPage>

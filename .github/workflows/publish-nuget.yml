@@ -1,13 +1,30 @@
 
-name: Publish Nuget
+name: Publish Nugets
 
 on:
   release:
     types: [published]
 
 jobs:
-  build:
+  build-core-nuget:
 
+    name: Build Core
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: |
+        nuget restore
+        msbuild Mvx.Forms.PageWrapper.Core/Mvx.Forms.PageWrapper.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+    - name: NuGet push
+      run: dotnet nuget push Mvx.Forms.PageWrapper.Core/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+  
+  build-android-nuget:
+
+    name: Build Android
     runs-on: macos-latest
 
     steps:
@@ -20,3 +37,19 @@ jobs:
         msbuild Mvx.Forms.PageWrapper.Android/Mvx.Forms.PageWrapper.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
     - name: NuGet push
       run: dotnet nuget push Mvx.Forms.PageWrapper.Android/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+  
+  build-ios-nuget:
+
+    name: Build iOS
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: |
+        nuget restore
+        msbuild Mvx.Forms.PageWrapper.iOS/Mvx.Forms.PageWrapper.iOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+    - name: NuGet push
+      run: dotnet nuget push Mvx.Forms.PageWrapper.iOS/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

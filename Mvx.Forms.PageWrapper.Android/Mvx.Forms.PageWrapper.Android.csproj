@@ -60,8 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MvxFormsDialogFragment.cs" />
     <Compile Include="MvxFormsFragment.cs" />
-    <Compile Include="MvxFormsAppBarFragment.cs" />
-    <Compile Include="MvxFormsAppCompatActivity.cs" />
+    <Compile Include="MvxFormsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -70,31 +69,26 @@
     <PackageReference Include="MvvmCross">
       <Version>7.1.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms">
-      <Version>4.8.0.1269</Version>
-    </PackageReference>
     <PackageReference Include="NuGet.Build.Packaging">
       <Version>0.2.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.6.0.847</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\xamarin_forms_activity.xml">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\xamarin_forms_fragment.xml">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\xamarin_forms_app_bar_fragment.xml">
+    <AndroidResource Include="Resources\layout\xamarin_forms_container.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <ProjectReference Include="..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj">
+      <Project>{a41a5e82-72dc-4242-922a-7857df788e29}</Project>
+      <Name>Mvx.Forms.PageWrapper.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj" />
+      <ProjectReference Include="..\Demo.Core\Demo.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\Page1.xaml.cs">
+        <DependentUpon>Page1B.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Pages\Page2.xaml.cs">
+        <DependentUpon>Page2B.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MvvmCross" Version="7.1.2" />
+      <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
+    </ItemGroup>
+
+</Project>

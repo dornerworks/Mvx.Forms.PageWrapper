@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<core:MvxEmbeddedContentPage x:TypeArguments="viewModels:Page1FragmentViewModel"
+                               xmlns="http://xamarin.com/schemas/2014/forms"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                               xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
+                               xmlns:core="clr-namespace:Mvx.Forms.PageWrapper.Core;assembly=Mvx.Forms.PageWrapper.Core"
+                               x:Class="Demo.Forms.Pages.Page1"
+                               Title="Page 1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Xamarin.Forms Page"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Next" Command="{Binding NextCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</core:MvxEmbeddedContentPage>
