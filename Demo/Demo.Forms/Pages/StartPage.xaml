@@ -4,15 +4,31 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                       xmlns:viewModels="clr-namespace:Demo.Core.ViewModels;assembly=Demo.Core"
                       xmlns:core="clr-namespace:Mvx.Forms.PageWrapper.Core;assembly=Mvx.Forms.PageWrapper.Core"
+                      xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                       x:DataType="viewModels:StartViewModel"
                       x:Class="Demo.Forms.Pages.StartPage"
-                      Title="Page Wrapper Demo">
+                      Title="Page Wrapper Demo"
+                      ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to the Demo." HorizontalOptions="CenterAndExpand"/>
             <!-- <Button Text="Forms List Page" Command="{Binding GoToListCommand}"/> -->
-            <Button Text="Fragment Navigation Stack" Command="{Binding GoToFragmentStackCommand}"/>
-            <Button Text="Activity Navigation Stack" Command="{Binding GoToActivityStackCommand}"/>
+            <Button Text="Fragment Navigation Stack" Command="{Binding GoToFragmentStackCommand}">
+                <Button.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="iOS">false</On>
+                        <On Platform="Android">true</On>
+                    </OnPlatform>
+                </Button.IsVisible>
+            </Button>
+            <Button Text="Activity Navigation Stack" Command="{Binding GoToActivityStackCommand}">
+                <Button.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="iOS">true</On>
+                        <On Platform="Android">false</On>
+                    </OnPlatform>
+                </Button.IsVisible>
+            </Button>
             <!-- <Button Text="Native Modal" Command="{Binding GoToNativeModalCommand}"/> -->
             <!-- <Button Text="Forms Modal" Command="{Binding GoToFormsModalCommand}"/> -->
         </StackLayout>

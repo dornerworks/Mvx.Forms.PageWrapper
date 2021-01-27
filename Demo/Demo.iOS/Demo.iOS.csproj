@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectGuid>{5524842E-EB87-4EF6-896A-3F8BF952585F}</ProjectGuid>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Demo.iOS</RootNamespace>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <AssemblyName>Demo.iOS</AssemblyName>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>x86_64</MtouchArch>
+        <MtouchLink>None</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchLink>None</MtouchLink>
+        <MtouchArch>x86_64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>true</MtouchDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <ConsolePause>false</ConsolePause>
+        <CodesignKey>iPhone Developer</CodesignKey>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="Setup.cs" />
+        <Compile Include="Views\Page1ViewController.cs" />
+        <Compile Include="Views\Page2ViewController.cs" />
+        <Compile Include="Views\StartViewController.cs" />
+        <None Include="Info.plist" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Content Include="Entitlements.plist" />
+        <InterfaceDefinition Include="LaunchScreen.storyboard" />
+        <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="MvvmCross, Version=7.1.2.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\MvvmCross.7.1.2\lib\xamarinios10\MvvmCross.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="MvvmCross.Forms, Version=7.1.2.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\MvvmCross.Forms.7.1.2\lib\xamarinios10\MvvmCross.Forms.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="OpenTK-1.0" />
+        <Reference Include="System" />
+        <Reference Include="System.Drawing.Common.dll" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\Xamarin.Forms.5.0.0.1905\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\Xamarin.Forms.5.0.0.1905\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\Xamarin.Forms.5.0.0.1905\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\packages\Xamarin.Forms.5.0.0.1905\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Xamarin.iOS" />
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj">
+        <Project>{a41a5e82-72dc-4242-922a-7857df788e29}</Project>
+        <Name>Mvx.Forms.PageWrapper.Core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.iOS\Mvx.Forms.PageWrapper.iOS.csproj">
+        <Project>{17914eb3-3a2c-40d4-82d7-e11b60e34d05}</Project>
+        <Name>Mvx.Forms.PageWrapper.iOS</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Demo.Core\Demo.Core.csproj">
+        <Project>{e40faec1-07ca-458e-af3f-3a91c0d2cc1a}</Project>
+        <Name>Demo.Core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Demo.Forms\Demo.Forms.csproj">
+        <Project>{048f1809-3177-4c3e-9801-592374359f5e}</Project>
+        <Name>Demo.Forms</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.props'))" />
+      <Error Condition="!Exists('..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.targets'))" />
+    </Target>
+    <Import Project="..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.5.0.0.1905\build\Xamarin.Forms.targets')" />
+</Project>
