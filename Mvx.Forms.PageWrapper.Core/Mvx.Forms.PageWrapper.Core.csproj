@@ -5,7 +5,7 @@
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Mvx.Forms.PageWrapper.Core</PackageId>
-        <PackageVersion>0.0.1</PackageVersion>
+        <PackageVersion>0.0.4</PackageVersion>
         <Authors>C. Brandon Butler</Authors>
         <Description>Xamarin.Forms Page wrappers for MvvmCross core project</Description>
         <Copyright>2021 DornerWorks, Ltd.</Copyright>

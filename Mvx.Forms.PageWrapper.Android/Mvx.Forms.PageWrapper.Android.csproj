@@ -20,7 +20,7 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>Mvx.Forms.PageWrapper.Android</PackageId>
-    <PackageVersion>0.0.3</PackageVersion>
+    <PackageVersion>0.0.4</PackageVersion>
     <Authors>C. Brandon Butler</Authors>
     <RepositoryUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper.Android</RepositoryUrl>
     <Description>Xamarin.Forms Page wrappers for MvvmCross Android Fragment/Activity</Description>
