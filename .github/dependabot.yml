@@ -8,3 +8,33 @@ updates:
     target-branch: "develop"
     schedule:
       interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/Mvx.Forms.PageWrapper.iOS"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/Mvx.Forms.PageWrapper.Core"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "Demo/Demo.Core"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "Demo/Demo.Droid"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "Demo/Demo.Forms"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "Demo/Demo.iOS"
+    target-branch: "develop"
+    schedule:
+      interval: "daily"
