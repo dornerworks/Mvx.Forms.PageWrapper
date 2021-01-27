@@ -20,7 +20,7 @@ jobs:
         nuget restore
         msbuild Mvx.Forms.PageWrapper.Core/Mvx.Forms.PageWrapper.Core.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
     - name: NuGet push
-      run: dotnet nuget push Mvx.Forms.PageWrapper.Core/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push Mvx.Forms.PageWrapper.Core/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
   
   build-android-nuget:
 
@@ -36,7 +36,7 @@ jobs:
         nuget restore
         msbuild Mvx.Forms.PageWrapper.Android/Mvx.Forms.PageWrapper.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
     - name: NuGet push
-      run: dotnet nuget push Mvx.Forms.PageWrapper.Android/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push Mvx.Forms.PageWrapper.Android/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
   
   build-ios-nuget:
 
@@ -52,4 +52,4 @@ jobs:
         nuget restore
         msbuild Mvx.Forms.PageWrapper.iOS/Mvx.Forms.PageWrapper.iOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
     - name: NuGet push
-      run: dotnet nuget push Mvx.Forms.PageWrapper.iOS/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push Mvx.Forms.PageWrapper.iOS/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
