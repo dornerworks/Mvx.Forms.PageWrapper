@@ -12,6 +12,7 @@ Wraps a Xamarin.Forms Page inside a MvvmCross view. This allows for "native" nav
 ## How To Use
 
 1. Create your Xamarin.Forms page by subclassing `MvxEmbeddedContentPage`.
+
 2a. In your Android project, create a `MvxFormsActivity` or `MvxFormsFragment` to wrap your Xamarin.Forms page.
 ```C#
 public class MyFormsFragment : MvxFormsFragment<MyPage, MyViewModel>
@@ -37,7 +38,7 @@ public class MyFormsViewController : FormsViewController<MyPage, MyViewModel>
 }
 ```
 
-3. You can navigate to the ViewModel as your normall would in MvvmCross. The Xamarin.Forms page will be imbedded inside the activity/fragment. Binding works as expected.
+3. You can navigate to the ViewModel as your normall would in MvvmCross. The Xamarin.Forms page will be embedded inside the activity/fragment. Binding works as expected in both the native view and content page.
 
 ## Customization
 
