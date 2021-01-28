@@ -10,13 +10,9 @@ Inspired by Alex Dunn's blog posts:
 Wraps a Xamarin.Forms Page inside a MvvmCross view. This allows for "native" navigation via MvvmCross. The result is that you can easily navigate between a native view and a embedded Xamarin.Forms page.
 
 ## How To Use
-### Core Project
 
 1. Create your Xamarin.Forms page by subclassing `MvxEmbeddedContentPage`.
-
-### Android
-
-2. In your  project, create a `MvxFormsActivity` or `MvxFormsFragment` to wrap your Xamarin.Forms page.
+2a. In your Android project, create a `MvxFormsActivity` or `MvxFormsFragment` to wrap your Xamarin.Forms page.
 ```C#
 public class MyFormsFragment : MvxFormsFragment<MyPage, MyViewModel>
 {
@@ -28,10 +24,7 @@ public class MyFormsFragment : MvxFormsFragment<MyPage, MyViewModel>
   }
 }
 ```
-
-### iOS
-
-2. In your iOS project, create a `MvxFormsViewController` to wrap your Xamarin.Forms page.
+2b. In your iOS project, create a `MvxFormsViewController` to wrap your Xamarin.Forms page.
 ```C#
 public class MyFormsViewController : FormsViewController<MyPage, MyViewModel>
 {
@@ -44,17 +37,40 @@ public class MyFormsViewController : FormsViewController<MyPage, MyViewModel>
 }
 ```
 
-### Core Project
-
 3. You can navigate to the ViewModel as your normall would in MvvmCross. The Xamarin.Forms page will be imbedded inside the activity/fragment. Binding works as expected.
 
-### Need to handle the page construction?
+## Customization
 
 You can override the CreatePage method to handle the construction of the page.
 ```C#
 protected override MyPage CreatePage()
 {
-  return new MyPage(paramter1, parameter2);
+  return new MyPage(paramter1, parameter2)
+  {
+    ViewModel = ViewModel
+  };
+}
+```
+
+### Android
+
+You can override the `Frame` that the `MvxEmbeddedContentPage` is embedded into.
+
+```c#
+protected override UIView FragmentLayoutId()
+{
+  return Resource.Id.some_other_frame;
+}
+```
+
+### iOS
+
+You can override the `UIView` that the `MvxEmbeddedContentPage` is embedded into.
+
+```c#
+protected override UIView PageContainerView()
+{
+  return _someOtherView;
 }
 ```
 
