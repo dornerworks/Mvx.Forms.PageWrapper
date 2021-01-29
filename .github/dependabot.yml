@@ -4,17 +4,7 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/Mvx.Forms.PageWrapper.Android"
-    target-branch: "develop"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "nuget"
-    directory: "/Mvx.Forms.PageWrapper.iOS"
-    target-branch: "develop"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "nuget"
-    directory: "/Mvx.Forms.PageWrapper.Core"
+    directory: "/Mvx.Forms.PageWrapper"
     target-branch: "develop"
     schedule:
       interval: "daily"

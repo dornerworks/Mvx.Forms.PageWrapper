@@ -1,6 +1,6 @@
 using Demo.Core.ViewModels;
 using Demo.Forms.Pages;
-using Mvx.Forms.PageWrapper.iOS;
+using Mvx.Forms.PageWrapper.Platforms.Ios;
 
 namespace Demo.iOS.Views
 {

@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper.Android", "Mvx.Forms.PageWrapper.Android\Mvx.Forms.PageWrapper.Android.csproj", "{2D307490-6304-4ED6-BA99-A52897F4D13F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{52C48486-1963-4D2C-82D2-21EA243F4EA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Droid", "Demo\Demo.Droid\Demo.Droid.csproj", "{47C1B87E-A333-4D82-B514-369BF258D7EE}"
@@ -11,11 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Forms", "Demo\Demo.For
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Core", "Demo\Demo.Core\Demo.Core.csproj", "{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper.Core", "Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj", "{A41A5E82-72DC-4242-922A-7857DF788E29}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper.iOS", "Mvx.Forms.PageWrapper.iOS\Mvx.Forms.PageWrapper.iOS.csproj", "{17914EB3-3A2C-40D4-82D7-E11B60E34D05}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.iOS", "Demo\Demo.iOS\Demo.iOS.csproj", "{5524842E-EB87-4EF6-896A-3F8BF952585F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvx.Forms.PageWrapper", "Mvx.Forms.PageWrapper\Mvx.Forms.PageWrapper.csproj", "{0BDED4C6-9028-48CC-84B7-78960C5B1055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D307490-6304-4ED6-BA99-A52897F4D13F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47C1B87E-A333-4D82-B514-369BF258D7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,18 +31,14 @@ Global
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E40FAEC1-07CA-458E-AF3F-3A91C0D2CC1A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A41A5E82-72DC-4242-922A-7857DF788E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A41A5E82-72DC-4242-922A-7857DF788E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A41A5E82-72DC-4242-922A-7857DF788E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A41A5E82-72DC-4242-922A-7857DF788E29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17914EB3-3A2C-40D4-82D7-E11B60E34D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17914EB3-3A2C-40D4-82D7-E11B60E34D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17914EB3-3A2C-40D4-82D7-E11B60E34D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17914EB3-3A2C-40D4-82D7-E11B60E34D05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5524842E-EB87-4EF6-896A-3F8BF952585F}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{5524842E-EB87-4EF6-896A-3F8BF952585F}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{5524842E-EB87-4EF6-896A-3F8BF952585F}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{5524842E-EB87-4EF6-896A-3F8BF952585F}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{0BDED4C6-9028-48CC-84B7-78960C5B1055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BDED4C6-9028-48CC-84B7-78960C5B1055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BDED4C6-9028-48CC-84B7-78960C5B1055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BDED4C6-9028-48CC-84B7-78960C5B1055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0

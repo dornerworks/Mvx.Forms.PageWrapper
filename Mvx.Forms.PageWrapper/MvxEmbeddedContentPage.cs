@@ -4,9 +4,9 @@ using MvvmCross.Forms.Views.Base;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
-namespace Mvx.Forms.PageWrapper.Core
+namespace Mvx.Forms.PageWrapper
 {
-    public class MvxEmbeddedContentPage : MvxEventSourceContentPage, IMvxPage
+    public abstract class MvxEmbeddedContentPage : MvxEventSourceContentPage, IMvxPage
     {
         public MvxEmbeddedContentPage()
         {
@@ -15,10 +15,7 @@ namespace Mvx.Forms.PageWrapper.Core
 
         public object DataContext
         {
-            get
-            {
-                return BindingContext.DataContext;
-            }
+            get => BindingContext.DataContext;
             set
             {
                 if (value != null && !(_bindingContext != null && ReferenceEquals(DataContext, value)))
@@ -57,10 +54,7 @@ namespace Mvx.Forms.PageWrapper.Core
 
         public IMvxViewModel ViewModel
         {
-            get
-            {
-                return DataContext as IMvxViewModel;
-            }
+            get => DataContext as IMvxViewModel;
             set
             {
                 DataContext = value;
@@ -71,34 +65,19 @@ namespace Mvx.Forms.PageWrapper.Core
 
         protected virtual void OnViewModelSet()
 		{
-            // ViewModel?.ViewCreated();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            // ViewModel?.ViewAppearing();
-            // ViewModel?.ViewAppeared();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            // ViewModel?.ViewDisappearing();
-            // ViewModel?.ViewDisappeared();
-            // ViewModel?.ViewDestroy();
+            
         }
     }
 
-    public class MvxEmbeddedContentPage<TViewModel> : MvxEmbeddedContentPage, IMvxPage<TViewModel> 
+    public abstract class MvxEmbeddedContentPage<TViewModel> : MvxEmbeddedContentPage, IMvxPage<TViewModel> 
         where TViewModel : class, IMvxViewModel
     {
         public new static readonly BindableProperty ViewModelProperty = BindableProperty.Create(nameof(ViewModel), typeof(TViewModel), typeof(IMvxElement<TViewModel>), default(TViewModel), BindingMode.Default, null, ViewModelChanged, null, null);
 
         public new TViewModel ViewModel
         {
-            get { return (TViewModel)base.ViewModel; }
-            set { base.ViewModel = value; }
+            get => (TViewModel)base.ViewModel;
+            set => base.ViewModel = value;
         }
 
         public MvxFluentBindingDescriptionSet<IMvxElement<TViewModel>, TViewModel> CreateBindingSet()

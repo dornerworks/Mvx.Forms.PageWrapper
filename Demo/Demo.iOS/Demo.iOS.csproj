@@ -110,13 +110,9 @@
         <Folder Include="Resources\" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.Core\Mvx.Forms.PageWrapper.Core.csproj">
-        <Project>{a41a5e82-72dc-4242-922a-7857df788e29}</Project>
-        <Name>Mvx.Forms.PageWrapper.Core</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper.iOS\Mvx.Forms.PageWrapper.iOS.csproj">
-        <Project>{17914eb3-3a2c-40d4-82d7-e11b60e34d05}</Project>
-        <Name>Mvx.Forms.PageWrapper.iOS</Name>
+      <ProjectReference Include="..\..\Mvx.Forms.PageWrapper\Mvx.Forms.PageWrapper.csproj">
+        <Project>{0bded4c6-9028-48cc-84b7-78960c5b1055}</Project>
+        <Name>Mvx.Forms.PageWrapper</Name>
       </ProjectReference>
       <ProjectReference Include="..\Demo.Core\Demo.Core.csproj">
         <Project>{e40faec1-07ca-458e-af3f-3a91c0d2cc1a}</Project>

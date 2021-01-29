@@ -1,0 +1,44 @@
+<Project Sdk="MSBuild.Sdk.Extras">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;xamarin.ios10;monoandroid10.0;</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(TargetsToBuild)' != 'All' ">
+        <TargetFrameworks Condition=" '$(TargetsToBuild)' == 'Android' ">netstandard2.0;monoandroid10.0;</TargetFrameworks>
+        <TargetFrameworks Condition=" '$(TargetsToBuild)' == 'iOS' ">netstandard2.0;xamarin.ios10</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Mvx.Forms.PageWrapper</AssemblyName>
+        <RootNamespace>Mvx.Forms.PageWrapper</RootNamespace>
+        <Description>Wrap Xamarin.Forms ContentPages in native MvvmCross views.</Description>
+        <PackageId>Mvx.Forms.PageWrapper</PackageId>
+        <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Platforms\**\*.cs" />
+        <None Include="Platforms\**\*.cs" />
+        <None Include="Resources\*.cs" />
+        <Compile Remove="Resources\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('xamarin.ios')) ">
+        <Compile Include="Platforms\Ios\**\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('monoandroid')) ">
+        <Compile Include="Platforms\Android\**\*.cs" />
+        <AndroidResource Include="Resources\**\*.xml" SubType="Designer" Generator="MSBuild:UpdateAndroidResources" />
+
+        <PackageReference Include="Xamarin.AndroidX.AppCompat" />
+        <PackageReference Include="Xamarin.AndroidX.Fragment" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MvvmCross" Version="7.1.2" />
+        <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
+    </ItemGroup>
+
+</Project>

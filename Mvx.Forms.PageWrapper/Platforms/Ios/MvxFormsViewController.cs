@@ -1,12 +1,10 @@
-﻿using MvvmCross.Platforms.Ios.Views;
+#nullable enable
+using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.ViewModels;
-using Mvx.Forms.PageWrapper.Core;
 using UIKit;
 using Xamarin.Forms;
 
-#nullable enable
-
-namespace Mvx.Forms.PageWrapper.iOS
+namespace Mvx.Forms.PageWrapper.Platforms.Ios
 {
     public abstract class MvxFormsViewController<TPage, TViewModel> : MvxViewController<TViewModel>
         where TPage : MvxEmbeddedContentPage, new()

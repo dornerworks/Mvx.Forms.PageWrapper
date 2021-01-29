@@ -2,10 +2,9 @@
 using Android.OS;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
-using Mvx.Forms.PageWrapper.Core;
 using Xamarin.Forms.Platform.Android;
 
-namespace Mvx.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Platforms.Android
 {
     public abstract class MvxFormsActivity<TPage, TViewModel> : MvxActivity<TViewModel>
         where TPage : MvxEmbeddedContentPage, new()

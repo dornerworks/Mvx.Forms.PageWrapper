@@ -1,7 +1,7 @@
 using Android.App;
 using Demo.Core.ViewModels;
 using Demo.Forms.Pages;
-using Mvx.Forms.PageWrapper.Android;
+using Mvx.Forms.PageWrapper.Platforms.Android;
 
 namespace Demo.Droid.Views
 {

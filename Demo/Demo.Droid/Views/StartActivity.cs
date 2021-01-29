@@ -2,7 +2,7 @@ using Android.App;
 using Demo.Core.ViewModels;
 using Demo.Forms.Pages;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
-using Mvx.Forms.PageWrapper.Android;
+using Mvx.Forms.PageWrapper.Platforms.Android;
 
 namespace Demo.Droid.Views
 {

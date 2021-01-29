@@ -1,0 +1,70 @@
+<Project>
+    <PropertyGroup>
+        <Company>DornerWorks</Company>
+        <Copyright>Copyright © DornerWorks, Ltd.</Copyright>
+        <PackageProjectUrl>https://github.com/dornerworks/Mvx.Forms.PageWrapper</PackageProjectUrl>
+        <Authors>C. Brandon Butler</Authors>
+        <PackageTags>mvvm;mvvmcross;xamarin;android;ios;forms;monodroid;monotouch;xamarin.android;xamarin.ios;xamarin.forms;</PackageTags>
+        <PackageReleaseNotes/>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <NeutralLanguage>en</NeutralLanguage>
+
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryUrl>https://github.com/MvvmCross/MvvmCross</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Product>$(AssemblyName) ($(TargetFramework))</Product>
+        <Version>0.0.5</Version>
+
+        <!--<Nullable>enable</Nullable>-->
+        <LangVersion>8.0</LangVersion>
+        <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000;CS0109;CS0108;CS0618;CS0114;NU1603</NoWarn>
+        <Platform>AnyCPU</Platform>
+        
+        <IsLibraryProject>$(MSBuildProjectName.Contains('Mvx.Forms.PageWrapper'))</IsLibraryProject>
+
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IncludeSymbols>true</IncludeSymbols>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+        <DesignTimeBuild>false</DesignTimeBuild>
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild Condition=" '$(IsTestProject)' != 'true'">true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(IsTestProject)' != 'true' and '$(TF_BUILD)' == 'true'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <Deterministic>true</Deterministic>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(IsLibraryProject)' == 'true'">
+<!--        <None Include="$(MSBuildThisFileDirectory)\LICENSE" Pack="true" PackagePath="\"/>-->
+<!--        <None Include="$(MSBuildThisFileDirectory)\icon.png" Pack="true" PackagePath="\"/>-->
+    </ItemGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <TargetsToBuild>All</TargetsToBuild>
+        <!-- <TargetsToBuild>Android</TargetsToBuild> -->
+        <!-- <TargetsToBuild>Uap</TargetsToBuild> -->
+        <!-- <TargetsToBuild>iOS</TargetsToBuild> -->
+        <!-- <TargetsToBuild>Tizen</TargetsToBuild> -->
+        <!-- <TargetsToBuild>Mac</TargetsToBuild> -->
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' != 'Debug' ">
+        <TargetsToBuild>All</TargetsToBuild>
+    </PropertyGroup>
+    
+</Project>

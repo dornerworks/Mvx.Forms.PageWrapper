@@ -1,0 +1,20 @@
+<Project>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('netstandard'))">
+        <DefineConstants>$(DefineConstants);NETSTANDARD;PORTABLE</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('xamarin.ios'))">
+        <DefineConstants>$(DefineConstants);MONO;UIKIT;COCOA;APPLE;IOS</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('monoandroid'))">
+        <DefineConstants>$(DefineConstants);MONO;ANDROID</DefineConstants>
+        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+        <AndroidResgenClass>Resource</AndroidResgenClass>
+        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'monoandroid10.0'">
+        <DefineConstants>$(DefineConstants);MONO;ANDROID;__ANDROID_29__;</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="$(TargetFramework.StartsWith('netcoreapp'))">
+        <DefineConstants>$(DefineConstants);NETCORE;NETCOREAPP</DefineConstants>
+    </PropertyGroup>
+</Project>

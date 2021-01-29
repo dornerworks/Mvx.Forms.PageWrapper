@@ -1,5 +1,5 @@
 using Demo.Core.ViewModels;
-using Mvx.Forms.PageWrapper.Core;
+using Mvx.Forms.PageWrapper;
 using Xamarin.Forms.Xaml;
 
 namespace Demo.Forms.Pages

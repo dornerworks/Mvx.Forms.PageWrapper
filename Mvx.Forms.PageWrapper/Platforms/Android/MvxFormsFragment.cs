@@ -1,17 +1,15 @@
 #nullable enable
-using Android.App;
 using Android.OS;
 using Android.Views;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
-using Mvx.Forms.PageWrapper.Core;
 using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
-namespace Mvx.Forms.PageWrapper.Android
+namespace Mvx.Forms.PageWrapper.Platforms.Android
 {
-    public abstract class MvxFormsDialogFragment<TPage, TViewModel> : MvxDialogFragment<TViewModel>
+    public abstract class MvxFormsFragment<TPage, TViewModel> : MvxFragment<TViewModel>
         where TPage : MvxEmbeddedContentPage, new()
         where TViewModel : class, IMvxViewModel
     {
@@ -22,22 +20,21 @@ namespace Mvx.Forms.PageWrapper.Android
             set => _page = value;
         }
         
-        public override Dialog OnCreateDialog(Bundle savedInstanceState)
+        public override void OnCreate(Bundle savedInstanceState)
         {
+            base.OnCreate(savedInstanceState);
+            
             var pageFragment = Page.CreateSupportFragment(Activity);
             ChildFragmentManager
                 .BeginTransaction()
                 .Replace(Resource.Id.page_frame, pageFragment)
                 .DisallowAddToBackStack()
                 .Commit();
-
-            return base.OnCreateDialog(savedInstanceState);
         }
         
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
-
             return this.BindingInflate(FragmentLayoutId(), container, false);
         }
         
@@ -48,7 +45,7 @@ namespace Mvx.Forms.PageWrapper.Android
                 ViewModel = ViewModel
             };
         }
-        
+
         protected virtual int FragmentLayoutId()
         {
             return Resource.Layout.xamarin_forms_container;
