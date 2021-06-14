@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
+      <PackageReference Include="MvvmCross.Forms" Version="8.0.1" />
       <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
