@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MvvmCross" Version="7.1.2" />
+      <PackageReference Include="MvvmCross" Version="8.0.2" />
       <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
     </ItemGroup>
 
