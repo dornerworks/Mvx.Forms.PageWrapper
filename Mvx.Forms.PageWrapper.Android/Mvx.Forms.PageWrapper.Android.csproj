@@ -75,7 +75,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.6.0.847</Version>
+      <Version>5.0.0.2401+905-sha.aeec18668-azdo.5950840</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
